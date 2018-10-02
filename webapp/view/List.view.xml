@@ -1,5 +1,36 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ProductsProducts.controller.List">
-	
-<Label text="Label" width="100%" id="__label0"/>
-	
+	<Page title="{i18n>productTittle}">
+		<headerContent>
+			<Button icon="sap-icon://hello-world" press="onOpenDialog"/>
+		</headerContent>
+		<content>
+			<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{ path : '/Products', sorter : { path : 'ProductID', group : false } }" growing="true" mode="MultiSelect">
+				<items>
+					<ColumnListItem id="item">
+						<cells>
+							<Text text="{ProductID}" id="__text5"/>
+							<Text text="{ProductName}" id="__text6"/>
+							<Text text="{UnitPrice}" id="__text7"/></cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column id="__column0">
+						<header>
+							<Label text="ID" id="__label0"/>
+						</header>
+					</Column>
+					<Column id="__column1">
+						<header>
+							<Label text="Product Desc" id="__label1"/>
+						</header>
+					</Column>
+					<Column id="__column2">
+						<header>
+							<Label text="Unit Price" id="__label2"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</content>
+	</Page>
 </mvc:View>

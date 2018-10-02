@@ -19,7 +19,7 @@
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
+					"localUri": "localService/Northwind.svc/metadata.xml"
 				}
 			}
 		}
@@ -59,8 +59,8 @@
 			}
 		},
 		"contentDensities": {
-			"compact": true,
-			"cozy": true
+			"compact": false,
+			"cozy": false
 		},
 		"models": {
 			"i18n": {

@@ -4,7 +4,16 @@
 			<Button icon="sap-icon://hello-world" press="onOpenDialog"/>
 		</headerContent>
 		<content>
-			<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{ path : '/Products', sorter : { path : 'ProductID', group : false } }" growing="true" mode="MultiSelect">
+			<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form4">
+				<sap.ui.layout.form:content>
+					<core:Title text="Product Selection" id="__title1" emphasized="true" icon="sap-icon://product"/>
+					<!--<Label text="Product" id="labelProduct"/>-->
+					<Input width="100%" id="inputProductID" placeholder="Product ID" fieldWidth="25%" submit="onSearchProduct"/>
+					<Input width="100%" id="inputProductDesc" placeholder="Product Desc" submit="onSearchProduct"/>
+					<Button text="Search" width="100px" id="buttonSearch" press="onSearchProduct"/>
+				</sap.ui.layout.form:content>
+			</sap.ui.layout.form:SimpleForm>
+			<Table noDataText="Drop column list items here and columns in the area above" id="listProducts" items="{ path : '/Products', sorter : { path : 'ProductID', group : false } }" growing="true" mode="MultiSelect" includeItemInSelection="true" fixedLayout="false">
 				<items>
 					<ColumnListItem id="item">
 						<cells>
